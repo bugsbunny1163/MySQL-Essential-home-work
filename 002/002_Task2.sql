@@ -1,0 +1,37 @@
+CREATE DATABASE sklad;
+
+USE sklad;
+
+CREATE TABLE suppliers
+(sup_id INT AUTO_INCREMENT NOT NULL,
+Name VARCHAR(30) UNIQUE,
+Adress VARCHAR(30),
+Country VARCHAR(20),
+Phone VARCHAR(15),
+E_mail VARCHAR(30),
+Contact_person VARCHAR(30),
+PRIMARY KEY(sup_id)
+);
+
+CREATE TABLE purchasers
+(pur_id INT AUTO_INCREMENT NOT NULL,
+Name VARCHAR(30) UNIQUE,
+Adress VARCHAR(30) ,
+Country VARCHAR(20),
+Phone VARCHAR(15),
+E_mail VARCHAR(30),
+Contact_person VARCHAR(30),
+PRIMARY KEY(pur_id)
+);
+
+
+
+CREATE TABLE employees(
+emp_id INT AUTO_INCREMENT NOT NULL,
+Name VARCHAR(30),
+DateOfBirth DATE,
+PlaceOfLive VARCHAR(30),
+Phone VARCHAR(15),
+Position VARCHAR(30),
+PRIMARY KEY(emp_id)
+);

@@ -1,1 +1,2 @@
-create database MyDB;
+CREATE DATABASE MyDB;
+

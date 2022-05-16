@@ -1,1 +1,0 @@
-# MySQL-Essential-home-work

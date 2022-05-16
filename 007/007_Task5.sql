@@ -61,21 +61,24 @@ DELIMITER |
 
 CREATE FUNCTION youngest()
 RETURNS TINYINT
-LANGUAGE SQL
 DETERMINISTIC
-CONTAINS SQL
-SQL SECURITY DEFINER
 BEGIN
-	RETURN (SELECT MIN(age));
+	RETURN (SELECT MIN(age) FROM clients);
 END |
 
 
-	SELECT mark, model, youngest()
-    FROM cars
-    INNER JOIN marks ON cars.mark_id = marks.id
-    INNER JOIN orders ON cars.id = orders.car_id
-    INNER JOIN clients ON clients.id = orders.client_id; |
-    
+DROP PROCEDURE car_of_youngers|
+
+CREATE PROCEDURE car_of_youngers()
+BEGIN
+SELECT mark, model
+FROM cars
+INNER JOIN marks ON cars.mark_id = marks.id
+INNER JOIN orders ON cars.id = orders.car_id
+INNER JOIN clients ON clients.id = orders.client_id AND age = youngest();
+END|
+
+CALL car_of_youngers()|
 
 
 

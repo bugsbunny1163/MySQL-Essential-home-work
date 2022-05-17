@@ -1,0 +1,3 @@
+CREATE DATABASE MyFunkDB_1;
+
+USE MyFunkDB_1;

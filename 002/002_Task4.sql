@@ -1,4 +1,4 @@
--- CREATE DATABASE HR_systems;
+CREATE DATABASE HR_systems;
 
 USE HR_systems;
 
